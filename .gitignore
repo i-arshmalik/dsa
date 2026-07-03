@@ -1,0 +1,18 @@
+# Executable files
+*.exe
+
+# Object files
+*.o
+*.obj
+
+# Debug files
+*.pdb
+
+# VS Code settings (optional)
+.vscode/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
