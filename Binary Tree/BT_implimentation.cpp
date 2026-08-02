@@ -14,12 +14,12 @@ class Node {
     }
 };
 static int idx = -1;
-Node *preorder(vector<int> pre) {
+Node *preorder_tree_make(vector<int> pre) {
     idx++;
     if(pre[idx] == -1) return NULL;
     Node *root = new Node(pre[idx]);
-    root->left = preorder(pre);
-    root->right = preorder(pre);
+    root->left = preorder_tree_make(pre);
+    root->right = preorder_tree_make(pre);
     return root;
 }
 void pre_traversal(Node *root) {
@@ -93,7 +93,7 @@ void level_order_h(Node *root) {
 }
 int main() {
     vector<int> pre = {1,2,-1,-1,3,4,-1,-1,5,-1,-1};
-    Node *root = preorder(pre);
+    Node *root = preorder_tree_make(pre);
     cout <<"pre order traversal = ";
     pre_traversal(root);
     cout <<"\ninorder traversal = ";
